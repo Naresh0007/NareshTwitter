@@ -9,10 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".LikesActivity"></activity>
+        <activity android:name=".Final_signup" />
         <activity
             android:name=".Dashboard"
             android:label="@string/title_activity_dashboard"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".DescribeActivity" />
         <activity android:name=".VerificationActivity" />
         <activity android:name=".SignupActivity" />
@@ -20,7 +22,6 @@
         <activity android:name=".CostumizationActivity" />
         <activity android:name=".CameraActivity" />
         <activity android:name=".SignInActivity" />
-        <activity android:name=".CreateAccountActivity" />
         <activity android:name=".MainActivity" />
         <activity android:name=".SplashActivity">
             <intent-filter>

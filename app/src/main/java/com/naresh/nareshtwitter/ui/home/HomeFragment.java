@@ -38,8 +38,6 @@ public class HomeFragment extends Fragment {
         recyclerView = root.findViewById(R.id.text_home);
 
         CurrentUser();
-
-
         return root;
     }
 

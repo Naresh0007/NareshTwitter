@@ -16,7 +16,7 @@
         <ImageView
             android:layout_width="25dp"
             android:layout_height="25dp"
-            android:src="@drawable/twitter"
+            android:src="@drawable/ic_twitter"
             android:layout_gravity="center"
             android:tint="@color/twitter"/>
 

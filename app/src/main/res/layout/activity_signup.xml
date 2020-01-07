@@ -11,7 +11,7 @@
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:scaleType="centerInside"
-        android:src="@drawable/twitter"
+        android:src="@drawable/ic_twitter"
         android:tint="@color/twitter"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -20,7 +20,7 @@
         app:layout_constraintVertical_bias="0.022" />
 
     <ImageView
-        android:id="@+id/SN_back"
+        android:id="@+id/image_back"
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:layout_marginTop="16dp"
@@ -47,7 +47,7 @@
         tools:layout_editor_absoluteX="0dp" />
 
     <EditText
-        android:id="@+id/SN_usernmae"
+        android:id="@+id/et_username"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
@@ -64,31 +64,30 @@
         tools:layout_editor_absoluteX="24dp" />
 
     <ImageView
-        android:id="@+id/SN_userP"
+        android:id="@+id/image_check"
         android:layout_width="24dp"
         android:layout_height="24dp"
-
-        app:layout_constraintBottom_toBottomOf="@+id/SN_usernmae"
-        app:layout_constraintEnd_toEndOf="@+id/SN_usernmae"
+        app:layout_constraintBottom_toBottomOf="@+id/et_username"
+        app:layout_constraintEnd_toEndOf="@+id/et_username"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/SN_usernmae"
-        app:layout_constraintTop_toTopOf="@+id/SN_usernmae"
+        app:layout_constraintStart_toStartOf="@+id/et_username"
+        app:layout_constraintTop_toTopOf="@+id/et_username"
         app:layout_constraintVertical_bias="0.571" />
 
     <ImageView
-        android:id="@+id/SN_emailP"
+        android:id="@+id/image_emailCheck"
         android:layout_width="24dp"
         android:scaleType="fitXY"
         android:layout_height="24dp"
-        app:layout_constraintBottom_toBottomOf="@+id/SN_email"
-        app:layout_constraintEnd_toEndOf="@+id/SN_email"
+        app:layout_constraintBottom_toBottomOf="@+id/et_email"
+        app:layout_constraintEnd_toEndOf="@+id/et_email"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/SN_email"
-        app:layout_constraintTop_toTopOf="@+id/SN_email"
+        app:layout_constraintStart_toStartOf="@+id/et_email"
+        app:layout_constraintTop_toTopOf="@+id/et_email"
         app:layout_constraintVertical_bias="0.571" />
 
     <TextView
-        android:id="@+id/SN_username_error"
+        android:id="@+id/tv_username_error"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
@@ -98,11 +97,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/SN_usernmae"
+        app:layout_constraintTop_toBottomOf="@+id/et_username"
         android:gravity="end" />
 
     <EditText
-        android:id="@+id/SN_email"
+        android:id="@+id/et_email"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
@@ -113,19 +112,19 @@
         android:paddingRight="30dp"
         android:singleLine="true"
         android:textAlignment="textStart"
-        app:layout_constraintTop_toBottomOf="@+id/SN_username_error"
+        app:layout_constraintTop_toBottomOf="@+id/tv_username_error"
         tools:layout_editor_absoluteX="16dp"
         android:gravity="start" />
 
     <TextView
-        android:id="@+id/SN_pass_error"
+        android:id="@+id/tv_pass_error"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/SN_email" />
+        app:layout_constraintTop_toBottomOf="@+id/et_email" />
 
     <View
         android:id="@+id/view2"
@@ -153,7 +152,7 @@
         android:layout_marginLeft="16dp" />
 
     <Button
-        android:id="@+id/btn_FS_signup"
+        android:id="@+id/btn_Nextsignup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="270dp"
