@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -44,10 +45,17 @@ public class AdapterTweet extends RecyclerView.Adapter<AdapterTweet.TweetList> {
         holder.txt_head.setText(tm.getHeadingtext());
         holder.txt_body.setText(tm.getMessagetext());
         StrictModeClass.StrictMode();
-        String imgPath = imagePath + tm.getImage();
         try {
+            String imgPath = imagePath + tm.getMessageimage();
             URL url = new URL(imgPath);
             holder.m_img.setImageBitmap(BitmapFactory.decodeStream((InputStream) url.getContent()));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        try {
+            String user = imagePath + tm.getUserimage();
+            URL url = new URL(user);
+            holder.p_img.setImageBitmap(BitmapFactory.decodeStream((InputStream) url.getContent()));
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -58,7 +66,7 @@ public class AdapterTweet extends RecyclerView.Adapter<AdapterTweet.TweetList> {
         return dataSetList.size();
     }
 
-    public class TweetList extends RecyclerView.ViewHolder{
+    public class TweetList extends RecyclerView.ViewHolder {
         ImageView p_img, m_img;
         TextView txt_head, txt_body;
 

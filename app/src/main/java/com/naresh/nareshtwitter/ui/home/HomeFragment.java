@@ -35,7 +35,7 @@ public class HomeFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_home, container, false);
-        recyclerView = root.findViewById(R.id.text_home);
+        recyclerView = root.findViewById(R.id.rvHome);
 
         CurrentUser();
         return root;
@@ -60,6 +60,7 @@ public class HomeFragment extends Fragment {
                     return;
                 }
                 List<TweetM> tweetMS = response.body();
+
 
                 AdapterTweet tweetAdapter = new AdapterTweet(getContext(), tweetMS);
                 recyclerView.setAdapter(tweetAdapter);

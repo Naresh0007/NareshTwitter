@@ -29,7 +29,7 @@ public class CostumizationActivity extends AppCompatActivity {
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(CostumizationActivity.this, PasswordActivity.class);
+                Intent intent = new Intent(CostumizationActivity.this, VerificationActivity.class);
                 intent.putExtra("email", email);
                 intent.putExtra("username", username);
                 startActivity(intent);

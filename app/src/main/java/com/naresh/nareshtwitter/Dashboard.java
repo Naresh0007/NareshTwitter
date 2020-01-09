@@ -45,57 +45,65 @@ public class Dashboard extends AppCompatActivity {
     String imagePath = base_url + "uploads/";
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)  {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashboard_nav);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        DrawerLayout drawer = findViewById(R.id.drawer_layout);
-        NavigationView navigationView = findViewById(R.id.nav_view);
-
+        loadCurrentUser();
+        DrawerLayout drawer = findViewById( R.id.drawer_layout );
+        NavigationView navigationView = findViewById( R.id.nav_view );
+        View hView =  navigationView.getHeaderView(0);
+        name =hView.findViewById( R.id.profilename );
+        email=hView.findViewById( R.id.profileemail );
+        imageView =hView.findViewById( R.id.profileimageView );
+        // Passing each menu ID as a set of Ids because each
+        // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow,
-                R.id.nav_tools, R.id.nav_share, R.id.nav_send)
-                .setDrawerLayout(drawer)
+                R.id.nav_home)
+                .setDrawerLayout( drawer )
                 .build();
-        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
-        NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
-        NavigationUI.setupWithNavController(navigationView, navController);
+        NavController navController = Navigation.findNavController( this, R.id.nav_host_fragment );
+        NavigationUI.setupActionBarWithNavController( this, navController, mAppBarConfiguration );
+        NavigationUI.setupWithNavController( navigationView, navController );
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.dashboard, menu);
+        getMenuInflater().inflate( R.menu.dashboard, menu );
         return true;
     }
 
     @Override
     public boolean onSupportNavigateUp() {
-        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
-        return NavigationUI.navigateUp(navController, mAppBarConfiguration)
+        NavController navController = Navigation.findNavController( this, R.id.nav_host_fragment );
+        return NavigationUI.navigateUp( navController, mAppBarConfiguration )
                 || super.onSupportNavigateUp();
     }
-
-    private void loadUser() {
+    private void loadCurrentUser() {
         String token;
         if (signin.Token.isEmpty()) {
             token = cma.token;
+            //Toast.makeText(getContext(), "token " +token, Toast.LENGTH_SHORT).show();
 
         } else {
             token = signin.Token;
+            // Toast.makeText(getContext(), "token " +token, Toast.LENGTH_SHORT).show();
 
         }
+
         ApiClass usersAPI = new ApiClass();
-        Call<UserInfo> userInfoCall = usersAPI.calls().getUser( token );
-        userInfoCall.enqueue(new Callback<UserInfo>() {
+
+        Call<UserInfo> userCall = usersAPI.calls().getUser( token );
+        userCall.enqueue( new Callback<UserInfo>() {
             @Override
             public void onResponse(Call<UserInfo> call, Response<UserInfo> response) {
                 if (!response.isSuccessful()) {
                     Toast.makeText( Dashboard.this, "Code " + response.code(), Toast.LENGTH_SHORT ).show();
                     return;
-            }
+                }
                 UserInfo userInfo= response.body();
                 Toast.makeText( Dashboard.this, " "+userInfo.get_id(), Toast.LENGTH_SHORT ).show();
                 name.setText( userInfo.getUsername() );
@@ -111,9 +119,12 @@ public class Dashboard extends AppCompatActivity {
             }
 
             @Override
-            public void onFailure(Call<UserInfo> call, Throwable t) {
+            public void onFailure(Call<UserInfo>call, Throwable t) {
                 Toast.makeText( Dashboard.this, "Error " + t.getLocalizedMessage(), Toast.LENGTH_SHORT ).show();
+
             }
-        });
+        } );
+
+
     }
 }
