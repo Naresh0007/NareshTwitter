@@ -59,7 +59,6 @@
         android:maxLength="60"
         android:paddingRight="30dp"
         android:singleLine="true"
-        android:textAlignmenxt="textStart"
         app:layout_constraintTop_toBottomOf="@+id/textView3"
         tools:layout_editor_absoluteX="24dp" />
 

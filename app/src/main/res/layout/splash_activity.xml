@@ -14,14 +14,12 @@
         android:layout_marginTop="164dp"
         android:layout_marginEnd="120dp"
         android:layout_marginRight="120dp"
-        android:tint="@color/twitter"
+        android:src="@drawable/ic_twitter"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.825"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.299"
-        app:srcCompat="@drawable/ic_twitter"
-        tools:ignore="VectorDrawableCompat" />
+        app:layout_constraintVertical_bias="0.299"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -24,12 +24,12 @@ public class CostumizationActivity extends AppCompatActivity {
         Bundle bundle = getIntent().getExtras();
         if (bundle != null) {
             email = bundle.getString("email");
-            email = bundle.getString("username");
+            username = bundle.getString("username");
         }
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(CostumizationActivity.this, SignupActivity.class);
+                Intent intent = new Intent(CostumizationActivity.this, PasswordActivity.class);
                 intent.putExtra("email", email);
                 intent.putExtra("username", username);
                 startActivity(intent);
